@@ -24,3 +24,10 @@ spring:
             - Path=/api/v1/posts/**
           filters:
             - StripPrefix=2
+
+        - id: connections-service
+          uri: lb://connections-service
+          predicates:
+            - Path=/api/v1/conenctions/**
+          filters:
+            - StripPrefix=2

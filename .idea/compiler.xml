@@ -26,9 +26,19 @@
         <module name="api-gateway" />
         <module name="user-service" />
       </profile>
+      <profile name="Annotation profile for connections-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="connections-service" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="19" />
+      <module name="connections-service" target="19" />
       <module name="discovery-server" target="19" />
       <module name="posts-service" target="19" />
       <module name="user-service" target="19" />
@@ -37,6 +47,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="connections-service" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="posts-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
